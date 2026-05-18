@@ -1,7 +1,13 @@
+import { devices } from "../data/data";
+
 const Exercise2 = () => {
   return (
     <ul>
-      <li>ここに適切なリストを表示してください</li>
+      {devices.map(device => {
+        if (device.width >= 700) {
+          return <li key={device.id}>{device.name + (device.price >= 1000 ? "💰 高級品" : "🛒 お買い得")}</li>
+        }
+      })}
     </ul>
   )
 };
