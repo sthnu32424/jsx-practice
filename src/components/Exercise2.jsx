@@ -1,4 +1,4 @@
-import { devices } from "../data/data";
+import { devices } from "../data/data.js";
 
 const Exercise2 = () => {
   return (
