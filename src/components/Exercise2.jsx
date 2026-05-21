@@ -3,14 +3,13 @@ import { devices } from "../data/data.js";
 const Exercise2 = () => {
   return (
     <ul>
-      {devices.map(
-        (device) =>
-          device.width >= 700 && (
-            <li key={device.id}>
-              {device.name} {device.price >= 1000 ? "💰 高級品" : "🛒 お買い得"}
-            </li>
-          ),
-      )}
+      {devices
+        .filter((device) => device.width >= 700)
+        .map((device) => (
+          <li key={device.id}>
+            {device.name} {device.price >= 1000 ? "💰 高級品" : "🛒 お買い得"}
+          </li>
+        ))}
     </ul>
   );
 };
